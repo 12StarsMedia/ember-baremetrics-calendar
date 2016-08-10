@@ -205,6 +205,8 @@ export default Ember.Component.extend({
     let component = this;
     let config = {
       element: this.$(),
+      earliest_date: this.get('earliestDate'),
+      latest_date: this.get('latestDate'),
       format: {
         input: this.get('inputFormat'),
         jump_month: this.get('jumpMonthFormat'),
@@ -219,9 +221,8 @@ export default Ember.Component.extend({
     if (this.get('type') === 'single') {
       config.current_date = this.get('currentDate');
       config.required = this.get('required');
+      config.placeholder = this.get('placeholder');
     } else {
-      config.earliest_date = this.get('earliestDate');
-      config.latest_date = this.get('latestDate');
       config.start_date = this.get('startDate');
       config.end_date = this.get('endDate');
       config.format.preset = this.get('presetFormat');
