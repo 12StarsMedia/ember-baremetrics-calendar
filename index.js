@@ -16,6 +16,7 @@ module.exports = {
 
     var isFastBoot = process.env.EMBER_CLI_FASTBOOT === 'true';
     if (!isFastBoot) {
+      app.import('bower_components/moment/moment.js');
       app.import('bower_components/BaremetricsCalendar/public/js/Calendar.js');
     }
     if (options.includeStyles !== false) {
